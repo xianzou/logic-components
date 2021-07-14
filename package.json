@@ -1,6 +1,6 @@
 {
   "name": "@xianzou/logic-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react版本的逻辑控制组件，让逻辑更符合语义化",
   "main": "dist/index-cjs.js",
   "module": "dist/index-es.js",

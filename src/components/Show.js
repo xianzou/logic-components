@@ -5,19 +5,15 @@
     </Show>
 */
 
-import { useEffect } from 'react';
 import { isFunction } from './utils';
 
 export const Show = ({ is, children, render }) => {
     
-    useEffect(() => {
-        const needUpdate = isFunction(is) ? is() : is;
-
-        if (!needUpdate){
-            return null;
-        }
-    }, [is]);
-
+    const needUpdate = isFunction(is) ? is() : is;
+    
+    if(!needUpdate){
+        return null;
+    }
     return isFunction(children) ? children() : isFunction(render) ? render() : children;
 };
 
