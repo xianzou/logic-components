@@ -73,7 +73,7 @@ import { Show } from 'logic-components';
 
 ### Swich-case
 ```js
-import { Switch } from 'logic-components';
+import { Switch,Case } from 'logic-components';
 
 <Switch data={value}>
     <Case is="0">0</Case>
