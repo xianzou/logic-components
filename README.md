@@ -1,4 +1,4 @@
-## logic-components
+## @xianzou/logic-components
 
 > react版本的逻辑控制组件，让代码更符合语义化，参照[nautil](https://www.tangshuang.net/7273.html)代码实现。
 
@@ -7,28 +7,28 @@
 静态组件，当shouldUpdate变化的时候才会更新；
 
 ```js
- import { Static } from 'logic-components';
+ import { Static } from '@xianzou/logic-components';
 
  <Static
         shouldUpdate={bool}
     >
-    <Text>{Date.now()}</Text>
+    <div>{Date.now()}</div>
  </Static>
     # or
  <Static
     shouldUpdate={bool}
-    render={() => <Text>{Date.now()}</Text>}
+    render={() => <div>{Date.now()}</div>}
  />
 ```
 
 ### Each
 ```js
-import { Each } from 'logic-components';
+import { Each } from '@xianzou/logic-components';
 
 <Each
 	data={data}
 	render={(value, key) =>
-   	 <Text>{key}: {value}</Text>
+   	 <div>{key}: {value}</div>
 	} 
  />
 ```
@@ -37,12 +37,12 @@ import { Each } from 'logic-components';
 用于For循环
 
 ```js
-import { For } from 'logic-components';
+import { For } from '@xianzou/logic-components';
 
 <For
 	data={}
 	render={i =>
-        <Text>{i}</Text>
+        <div>{i}</div>
 	}
 />
 ```
@@ -50,30 +50,30 @@ import { For } from 'logic-components';
 ### Prepare
 准备渲染组件。当遇到一些异步，或动态变化时，你可能希望用一个 loading 效果返回给用户。Prepare 组件用于实现该目的;
 ```js
-import { Prepare } from 'logic-components';
+import { Prepare } from '@xianzou/logic-components';
 
 <Prepare
 	isReady={bool}
-	loading={<Text>loading</Text>}
-    render={() =><Text>loaded</Text>}
+	loading={<div>loading</div>}
+    render={() =><div>loaded</div>}
 />
 ```
 
 ### Show
 通过 is 控制其显示或隐藏
 ```js
-import { Show } from 'logic-components';
+import { Show } from '@xianzou/logic-components';
 
 <Show is={bool}>
-    <Text>show me</Text>
+    <div>show me</div>
 </Show>
 # or
-<Show is={bool} render={() => <Text>show me</Text>} />
+<Show is={bool} render={() => <div>show me</div>} />
 ```
 
 ### Swich-case
 ```js
-import { Switch,Case } from 'logic-components';
+import { Switch,Case } from '@xianzou/logic-components';
 
 <Switch data={value}>
     <Case is="0">0</Case>
@@ -81,4 +81,12 @@ import { Switch,Case } from 'logic-components';
 	<Case is="1" break>1</Case>
 	<Case default>x</Case>
 </Switch>
+```
+### Img
+图片加载异常同时显示alt文字说明和默认图片加载异常背景
+图片默认最小高度和宽度为48px 请务必自行根据项目设置图片高宽
+```js
+import { Img } from '@xianzou/logic-components';
+
+<Img alt="图片描述，文字加载失败显示文字" src="图片路径" className="图片类名" ...{otherProps} />
 ```
