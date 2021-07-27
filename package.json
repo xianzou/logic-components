@@ -1,6 +1,6 @@
 {
   "name": "@xianzou/logic-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react版本的逻辑控制组件，让逻辑更符合语义化",
   "main": "dist/index-cjs.js",
   "module": "dist/index-es.js",
@@ -20,6 +20,10 @@
   ],
   "author": "xianzou <lijiaqijl@163.com>",
   "license": "ISC",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/xianzou/logic-components.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/plugin-syntax-jsx": "^7.14.5",
