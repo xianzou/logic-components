@@ -2,6 +2,8 @@
 
 > react版本的逻辑控制组件，让代码更符合语义化，参照[nautil](https://www.tangshuang.net/7273.html)代码实现。
 
+`render方法`和`children`说明：使用`render方法`传入组件或者`jsx`第一次代码不会执行，而直接通过`children`书写组件或者`jsx`第一次会执行该代码；
+
 ### Static
 
 静态组件，当shouldUpdate变化的时候才会更新；
@@ -12,7 +14,9 @@
  <Static
         shouldUpdate={bool}
     >
-    <div>{Date.now()}</div>
+    <div>
+       {Date.now()}
+    </div>
  </Static>
     # or
  <Static
@@ -82,7 +86,29 @@ import { Switch,Case } from '@xianzou/logic-components';
 	<Case default>x</Case>
 </Switch>
 ```
+### IF  Else
+
+用于条件控制组件显示隐藏
+
+```jsx
+import {  If, ElseIf, Else } from '@xianzou/logic-components';
+
+  <If is={cond1} render={fn1}>
+   <ElseIf is={cond2} render={fn2} />
+   <Else render={fn0} />
+  </If>
+ 
+  <If is={cond1}>
+    <Cond1 />
+    <ElseIf is={cond2}>
+    <Cond2 />
+    <Else />
+    <Rest />
+  </If>
+```
+
 ### Img
+
 图片加载异常同时显示alt文字说明和默认图片加载异常背景
 图片默认最小高度和宽度为48px 请务必自行根据项目设置图片高宽
 ```js
